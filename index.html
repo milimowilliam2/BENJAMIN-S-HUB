@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="menu-cards.css" />
     <link rel="stylesheet" href="category-expansion.css" />
     <link rel="stylesheet" href="modern-theme.css" />
+    <link rel="stylesheet" href="dropdown-menu.css" />
   </head>
   <body>
     <div class="announcement">Free delivery on orders over KSh 10,000 <span>•</span> Shop with confidence</div>
@@ -21,7 +22,18 @@
         <span class="brand-mark">B</span><span>BENJAMIN<br /><em>HOUSEHOLDS</em></span>
       </a>
       <nav aria-label="Main navigation" class="desktop-nav">
-        <a href="#shop">Shop</a><a href="#categories">Categories</a><a href="#about">Our story</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" aria-expanded="false" aria-controls="shop-dropdown">Shop <span>⌄</span></button>
+          <div class="nav-dropdown-menu" id="shop-dropdown" role="menu">
+            <a href="#shop" data-category="all" role="menuitem">All products <span>→</span></a>
+            <a href="#shop" data-category="living" role="menuitem">Living room <span>→</span></a>
+            <a href="#shop" data-category="kitchen" role="menuitem">Kitchen &amp; dining <span>→</span></a>
+            <a href="#shop" data-category="bedroom" role="menuitem">Bedroom <span>→</span></a>
+            <a href="#shop" data-category="bath" role="menuitem">Bath &amp; laundry <span>→</span></a>
+            <a href="#shop" data-category="storage" role="menuitem">Storage &amp; cleaning <span>→</span></a>
+          </div>
+        </div>
+        <a href="#categories">Categories</a><a href="#about">Our story</a>
       </nav>
       <div class="header-actions">
         <button class="icon-button search-toggle" aria-label="Search products">
@@ -76,10 +88,10 @@
 
       <section class="statement" id="about"><div><p class="eyebrow">The Benjamin difference</p><h2>For a home that<br /><i>works beautifully.</i></h2></div><p>From first homes to busy family spaces, Benjamin Households brings practical, dependable and beautiful essentials to the places where life happens.</p></section>
 
-      <section class="newsletter"><div><p class="eyebrow">Stay in the know</p><h2>A little joy, delivered.</h2><p>New finds, thoughtful tips and special offers, straight to your inbox.</p></div><form id="newsletter-form"><label class="sr-only" for="email">Email address</label><input id="email" type="email" placeholder="Your email address" required /><button class="button button-light">Subscribe <span>→</span></button><small class="form-message"></small></form></section>
+      <section class="newsletter"><div><p class="eyebrow">Stay in the know</p><h2>A little joy, delivered.</h2><p>New finds, thoughtful tips and special offers, delivered through WhatsApp.</p></div><form id="newsletter-form"><label class="sr-only" for="whatsapp">WhatsApp number</label><input id="whatsapp" type="tel" inputmode="tel" placeholder="Your WhatsApp number" required /><button class="button button-light">Join on WhatsApp <span>→</span></button><small class="form-message"></small></form></section>
     </main>
 
-    <footer><a class="brand" href="#top"><span class="brand-mark">B</span><span>BENJAMIN<br /><em>HOUSEHOLDS</em></span></a><p>Everyday essentials for beautifully lived-in homes.</p><div><a href="#shop">Shop</a><a href="#about">About us</a><a href="mailto:hello@benjaminhouseholds.co.ke">Contact</a></div><small>© <span id="year"></span> Benjamin Households. All rights reserved.</small></footer>
+    <footer><a class="brand" href="#top"><span class="brand-mark">B</span><span>BENJAMIN<br /><em>HOUSEHOLDS</em></span></a><p>Everyday essentials for beautifully lived-in homes.</p><div><a href="#shop">Shop</a><a href="#about">About us</a><a href="https://wa.me/?text=Hello%20Benjamin%20Households%2C%20I%20would%20like%20to%20make%20an%20enquiry." target="_blank" rel="noopener">WhatsApp us</a></div><small>© <span id="year"></span> Benjamin Households. All rights reserved.</small></footer>
 
     <aside class="cart-panel" aria-label="Shopping cart" aria-hidden="true"><div class="cart-heading"><h2>Your bag <span class="cart-count">0</span></h2><button class="close-cart" aria-label="Close cart">×</button></div><div class="cart-items"></div><div class="empty-cart">Your bag is waiting for something lovely.</div><div class="cart-footer"><div><span>Subtotal</span><strong class="subtotal">KSh 0</strong></div><button class="button button-dark checkout">Checkout <span>→</span></button><small>Delivery calculated at checkout.</small></div></aside><div class="overlay"></div>
     <div class="toast" role="status"></div>
